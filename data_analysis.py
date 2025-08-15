@@ -4,18 +4,23 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy.stats import zscore
 import os
+import gdown
 
 # -------------------
-# Setup Visualization Directory
+# 0) Setup
 # -------------------
-# Create visualization directory if it doesn't exist
 viz_dir = "visualization"
 os.makedirs(viz_dir, exist_ok=True)
 
 # -------------------
-# Load Data
+# 1) Load Data
 # -------------------
-df = pd.read_csv("data.csv")
+file_name = "data.csv"
+file_id = "1KPw56B4kYr5zaPb_edTgyMcFSzp6soGq"
+if not os.path.exists(file_name):
+    gdown.download(id=file_id, output=file_name, quiet=False)
+
+df = pd.read_csv(file_name)
 df.head()
 
 # -------------------
