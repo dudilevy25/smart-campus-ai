@@ -34,7 +34,7 @@ from sklearn.metrics import (
 RANDOM_STATE = 42
 
 # ---- Figure saving helpers ----
-VIS_DIR = Path("visualizations")
+VIS_DIR = Path("visualization")
 VIS_DIR.mkdir(parents=True, exist_ok=True)
 
 def save_fig(name: str):
